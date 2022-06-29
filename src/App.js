@@ -1,4 +1,5 @@
 import Movies from "./components/Movies";
+import MenuMain from "./components/MenuMain";
 
 import store from "./store";
 import { Provider } from "react-redux";
@@ -10,6 +11,7 @@ function App() {
     <Router>
       <Provider store={store}>
         <>
+          <MenuMain />
           <Routes>
             <Route exact path="/" element={<Movies />} />
           </Routes>

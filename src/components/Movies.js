@@ -1,21 +1,19 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Movie from "./Movie";
-import {
-  getCinemaListings,
-  getCinemaListingsAction,
-} from "../actions/moviesAction";
+import { getCinemaListings } from "../actions/moviesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import clientAxios from "../configAxios/axios";
 
-function Movies() {
+const Movies = () => {
   const dispatch = useDispatch();
   const getCinema = (movies) => dispatch(getCinemaListings(movies));
+  const { url } = useSelector((state) => state.movies);
 
-  const getCinemaListingsAction = async () => {
+  const getMovies = async (url) => {
     await clientAxios
-      .get("/trending/movie/week?api_key=45bf6592c14a965b33549f4cc7e6c664")
+      .get(url)
       .then((res) => {
         console.log(res);
         getCinema(res.data.results);
@@ -26,8 +24,8 @@ function Movies() {
   };
 
   useEffect(() => {
-    getCinemaListingsAction();
-  }, []);
+    getMovies(url);
+  }, [url]);
 
   const { movies } = useSelector((state) => state.movies);
   console.log(movies);
@@ -45,6 +43,6 @@ function Movies() {
       </Grid>
     </Box>
   );
-}
+};
 
 export default Movies;
