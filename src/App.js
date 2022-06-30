@@ -1,5 +1,6 @@
 import Movies from "./components/Movies";
 import MenuMain from "./components/MenuMain";
+import MovieDetails from "./components/MovieDetails";
 
 import store from "./store";
 import { Provider } from "react-redux";
@@ -14,6 +15,11 @@ function App() {
           <MenuMain />
           <Routes>
             <Route exact path="/" element={<Movies />} />
+            <Route
+              exact
+              path="/movieDetails"
+              element={<MovieDetails props={{ movie: {} }} />}
+            />
           </Routes>
         </>
       </Provider>

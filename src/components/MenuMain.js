@@ -19,6 +19,7 @@ import {
 } from "../actions/moviesAction";
 
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const MenuMain = () => {
   const [search, setSearch] = useState("");
@@ -97,24 +98,30 @@ const MenuMain = () => {
                 display: { xs: "none", md: "flex" },
               }}
             >
-              <Button
-                onClick={handleSetUrlCinema}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Cartelera
-              </Button>
-              <Button
-                onClick={handleSetUrlPopular}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Populares
-              </Button>
-              <Button
-                onClick={handleSetUrlChildren}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Populares infantiles
-              </Button>
+              <Link to="/">
+                <Button
+                  onClick={handleSetUrlCinema}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  Cartelera
+                </Button>
+              </Link>
+              <Link to="/">
+                <Button
+                  onClick={handleSetUrlPopular}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  Populares
+                </Button>
+              </Link>
+              <Link to="/">
+                <Button
+                  onClick={handleSetUrlChildren}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  Populares infantiles
+                </Button>
+              </Link>
             </Box>
             {/* <Search> */}
             {/* <StyledInputBase
