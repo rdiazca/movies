@@ -1,4 +1,4 @@
-export const GET_CINEMA_LISTINGS = "GET_CINEMA_LISTINGS"; //obtiene las películas que están en la cartelera de los cines
+export const GET_CINEMA_LISTINGS = "GET_CINEMA_LISTINGS";
 export const SET_URL_CINEMA = "SET_URL_CINEMA";
 export const SET_URL_POPULAR = "SET_URL_POPULAR";
 export const SET_URL_CHILDREN = "SET_URL_CHILDREN";

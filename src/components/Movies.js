@@ -17,7 +17,6 @@ const Movies = () => {
     await clientAxios
       .get(url)
       .then((res) => {
-        console.log(res);
         getCinema(res.data.results);
       })
       .catch((error) => {
@@ -31,7 +30,6 @@ const Movies = () => {
   }, [url]);
 
   const { movies } = useSelector((state) => state.movies);
-  console.log(movies);
 
   return (
     <Box className="moviesBox">

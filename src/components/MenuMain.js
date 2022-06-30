@@ -46,11 +46,11 @@ const MenuMain = () => {
   };
 
   return (
-    <Box sx={{ marginBottom: "7rem" }}>
+    <Box className="menuBox">
       <AppBar>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box className="menuBox">
+            <Box className="menuBox2">
               <Link to="/" className="textDecoration">
                 <Button
                   onClick={handleSetUrlCinema}

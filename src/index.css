@@ -47,9 +47,13 @@ code {
 }
 
 .menuBox{
+  margin-bottom: 7rem;
+}
+
+.menuBox2{
   display: flex;
   flex-grow: 1;
   justify-content: center;
-
 }
+
 

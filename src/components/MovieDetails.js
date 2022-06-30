@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material";
 
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { hideSearch } from "../actions/moviesAction";
 import { useEffect } from "react";
 
