@@ -5,6 +5,7 @@ import {
   SET_URL_CHILDREN,
   SET_URL_SEARCH,
   SHOW_SEARCH,
+  HIDE_SEARCH,
 } from "../types";
 
 const initialState = {
@@ -56,7 +57,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         error: null,
-        showSearch: !state.showSearch,
+        showSearch: true,
+      };
+
+    case HIDE_SEARCH:
+      return {
+        ...state,
+        error: null,
+        showSearch: false,
       };
 
     default:

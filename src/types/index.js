@@ -4,3 +4,4 @@ export const SET_URL_POPULAR = "SET_URL_POPULAR";
 export const SET_URL_CHILDREN = "SET_URL_CHILDREN";
 export const SET_URL_SEARCH = "SET_URL_SEARCH";
 export const SHOW_SEARCH = "SHOW_SEARCH";
+export const HIDE_SEARCH = "HIDE_SEARCH";

@@ -5,6 +5,7 @@ import {
   SET_URL_CHILDREN,
   SET_URL_SEARCH,
   SHOW_SEARCH,
+  HIDE_SEARCH,
 } from "../types";
 
 export const getCinemaListings = (movies) => ({
@@ -31,4 +32,8 @@ export const setUrlSearch = (search) => ({
 
 export const showSearch = () => ({
   type: SHOW_SEARCH,
+});
+
+export const hideSearch = () => ({
+  type: HIDE_SEARCH,
 });

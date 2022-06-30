@@ -50,13 +50,8 @@ const MenuMain = () => {
       <AppBar>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-              }}
-            >
-              <Link to="/">
+            <Box className="menuBox">
+              <Link to="/" className="textDecoration">
                 <Button
                   onClick={handleSetUrlCinema}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -64,7 +59,7 @@ const MenuMain = () => {
                   Cartelera
                 </Button>
               </Link>
-              <Link to="/">
+              <Link to="/" className="textDecoration">
                 <Button
                   onClick={handleSetUrlPopular}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -72,7 +67,7 @@ const MenuMain = () => {
                   Populares
                 </Button>
               </Link>
-              <Link to="/">
+              <Link to="/" className="textDecoration">
                 <Button
                   onClick={handleSetUrlChildren}
                   sx={{ my: 2, color: "white", display: "block" }}

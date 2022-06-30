@@ -2,12 +2,12 @@ import { Typography, Box } from "@mui/material";
 
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { showSearch } from "../actions/moviesAction";
+import { hideSearch } from "../actions/moviesAction";
 import { useEffect } from "react";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
-  const search = () => dispatch(showSearch());
+  const search = () => dispatch(hideSearch());
 
   const location = useLocation();
 
