@@ -4,8 +4,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { styled, alpha } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, TextField } from "@mui/material";
 
@@ -18,16 +16,18 @@ import {
   setUrlSearch,
 } from "../actions/moviesAction";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MenuMain = () => {
   const [search, setSearch] = useState("");
-  const distpacth = useDispatch();
-  const cinemaAction = () => distpacth(setUrlCinema());
-  const popularAction = () => distpacth(setUrlPopular());
-  const childrenAction = () => distpacth(setUrlChildren());
-  const searchAction = (search) => distpacth(setUrlSearch(search));
+  const dispatch = useDispatch();
+  const cinemaAction = () => dispatch(setUrlCinema());
+  const popularAction = () => dispatch(setUrlPopular());
+  const childrenAction = () => dispatch(setUrlChildren());
+  const searchAction = (search) => dispatch(setUrlSearch(search));
+
+  const { showSearch } = useSelector((state) => state.movies);
 
   const handleSetUrlCinema = () => {
     cinemaAction();
@@ -44,48 +44,6 @@ const MenuMain = () => {
   const handleSearch = () => {
     searchAction(search);
   };
-
-  const Search = styled("div")(({ theme }) => ({
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-  }));
-
-  const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }));
-
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: "inherit",
-    "& .MuiInputBase-input": {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create("width"),
-      width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        width: "12ch",
-        "&:focus": {
-          width: "20ch",
-        },
-      },
-    },
-  }));
 
   return (
     <Box sx={{ marginBottom: "7rem" }}>
@@ -123,25 +81,21 @@ const MenuMain = () => {
                 </Button>
               </Link>
             </Box>
-            {/* <Search> */}
-            {/* <StyledInputBase
-              placeholder="Buscar…"
-              inputProps={{ "aria-label": "search" }}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            /> */}
 
-            <TextField
-              variant="filled"
-              placeholder="Buscar…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            {showSearch ? (
+              <Box>
+                <TextField
+                  variant="filled"
+                  placeholder="Buscar…"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
 
-            <IconButton onClick={handleSearch}>
-              <SearchIcon />
-            </IconButton>
-            {/* </Search> */}
+                <IconButton onClick={handleSearch}>
+                  <SearchIcon />
+                </IconButton>
+              </Box>
+            ) : null}
           </Toolbar>
         </Container>
       </AppBar>

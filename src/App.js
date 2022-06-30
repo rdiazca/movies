@@ -15,11 +15,7 @@ function App() {
           <MenuMain />
           <Routes>
             <Route exact path="/" element={<Movies />} />
-            <Route
-              exact
-              path="/movieDetails"
-              element={<MovieDetails props={{ movie: {} }} />}
-            />
+            <Route exact path="/movieDetails" element={<MovieDetails />} />
           </Routes>
         </>
       </Provider>

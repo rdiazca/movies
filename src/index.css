@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mainBox{
+  margin-left: 15%;
+}
+
+.secondaryBox{
+  display: block;
+  height: 400px;
+  margin-left: 5%;
+  margin-right: 5rem;
+  width: 450px;
+}
+
+.typographyTitle{
+  margin-bottom: 2rem;
+  margin-left: 10%;
+}
+
+.displayFlex{
+  display: flex;
+}
+
+.marginLeft{
+  margin-left: 10%;
+}
+
+.moviesBox{
+  flex-grow: 1;
+  margin-left: 5%;
+}
+
+.textDecoration{
+  text-decoration: none;
+}
+
